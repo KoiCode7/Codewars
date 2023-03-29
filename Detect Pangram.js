@@ -7,12 +7,11 @@
 
 
 // Answer
-function isPangram(string) {
-  let sentence = string.toLowerCase();
-  sentence = sentence.match(/([a-z])(?!.*\1)/g);
-  if (sentence.length === 26) {
+function isPangram(string){
+  const aToZ = string.match(/([a-z])(?!.*\1)/gi);
+  if(aToZ.length === 26) {
     return true;
   } else {
     return false;
   }
-}
+  }
