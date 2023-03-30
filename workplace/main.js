@@ -1,13 +1,20 @@
+// Answer
+function getCount(str) {
+  let count = 0;
 
-
-
-function isPangram(string){
-  const aToZ = string.match(/([a-z])(?!.*\1)/gi);
-  if(aToZ.length === 26) {
-    return true;
-  } else {
-    return false;
+  for (i = 0; i < str.length; i++) {
+    if (
+      (str[i] === "a") |
+      (str[i] === "i") |
+      (str[i] === "u") |
+      (str[i] === "e") |
+      (str[i] === "o")
+    ) {
+      count += 1;
+    }
   }
-  }
 
-console.log(isPangram("The quick brown fox jumps over the lazy dog"));
+  return count;
+}
+
+getCount("abiuracadeoabra");
