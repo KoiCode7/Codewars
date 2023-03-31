@@ -1,8 +1,8 @@
 // Answer
-function getCount(str) {
-const count = str.match(/[aiueo]/gi);
-console.log(count);
-return count? count.length: 0;
+function digitize(n) {
+  let array = String(n).split("");
+  array = array.map(el => +el);
+  return array.reverse();
 }
 
-getCount("bbb");
+console.log(digitize(5326));
