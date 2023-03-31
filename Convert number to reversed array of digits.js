@@ -9,7 +9,7 @@
 
 // Answer
 function digitize(n) {
-  let array = n.toString(10).split("");
+  let array = String(n).split("");
   array = array.map(el => +el);
   return array.reverse();
 }
