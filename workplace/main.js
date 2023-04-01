@@ -1,8 +1,24 @@
 // Answer
-function digitize(n) {
-  let array = String(n).split("");
-  array = array.map(el => +el);
-  return array.reverse();
+// "use strict";
+
+// function flattenAndSort(array) {
+//   let oneDimensionalArray = [];
+//   array.forEach(el => oneDimensionalArray.push(...el) )
+//   return oneDimensionalArray.sort((a, b) => a - b);
+// }
+
+// const a = [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]];
+
+// flattenAndSort(a);
+// console.log(flattenAndSort(a));
+"use strict";
+
+function flattenAndSort(array) {
+  return [].concat(...array);
 }
 
-console.log(digitize(5326));
+const a = [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]];
+
+flattenAndSort(a);
+console.log(flattenAndSort(a));
+
