@@ -13,12 +13,9 @@
 
 // http://stackoverflow.com/questions/6093874/why-doesnt-the-sort-function-of-javascript-work-well
 
-
 // Answer
 "use strict";
 
 function flattenAndSort(array) {
-  let oneDimensionalArray = [];
-  array.forEach(el => oneDimensionalArray.push(...el) )
-  return oneDimensionalArray.sort((a, b) => a - b);
+  return array.flat().sort((a, b) => a - b);
 }
