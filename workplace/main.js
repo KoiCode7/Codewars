@@ -1,24 +1,15 @@
-// Answer
-// "use strict";
-
-// function flattenAndSort(array) {
-//   let oneDimensionalArray = [];
-//   array.forEach(el => oneDimensionalArray.push(...el) )
-//   return oneDimensionalArray.sort((a, b) => a - b);
+// function largestPairSum(numbers) {
+//   const sortedArray = numbers.sort((a, b) => b - a);
+//   return sortedArray[0] + sortedArray[1];
 // }
 
-// const a = [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]];
+console.log(largestPairSum([10, 14, 2, 23, 19]));
 
-// flattenAndSort(a);
-// console.log(flattenAndSort(a));
-"use strict";
 
-function flattenAndSort(array) {
-  return [].concat(...array);
+function largestPairSum(numbers) {
+  const [a, b, c] = numbers.sort((a, b) => b - a)
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  return a + b
 }
-
-const a = [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]];
-
-flattenAndSort(a);
-console.log(flattenAndSort(a));
-
