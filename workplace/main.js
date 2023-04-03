@@ -1,6 +1,5 @@
-function sumEvenNumbers(input) {
-  const evenNum = input.filter((el) => el % 2 === 0);
-  return Math.floor(evenNum.reduce((acc, c) => acc + c, 0));
+function betweenExtremes(numbers) {
+return Math.max(...numbers) - Math.min(...numbers)
 }
 
-console.log(sumEvenNumbers([4, 3, 1, 2, 5, 10, 6, 7, 9, 8]));
+console.log(betweenExtremes([1, 434, 555, 34, 112]));
