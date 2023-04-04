@@ -18,24 +18,20 @@
 
 // Answer
 function validParentheses(parenStr) {
-  let stack = [];
-  let pair = { "(": ")" };
+  let count = 0;
 
-  for(let i = 0; i < parenStr.length; i++) {
-    if(parenStr[i] === '(') {
-      stack.push(parenStr[i])
+  for (let i = 0; i < parenStr.length; i++) {
+    if (parenStr[i] === "(") {
+      count++;
     } else {
-      const picked = stack.pop();
-
-      if(parenStr[i] !== pair[picked]) {
-        return false;
-      }
+      count--;
+    }
+    if (count < 0) {
+      return false;
     }
   }
-
-  if(stack.length !== 0) {
+  if (count > 0) {
     return false;
   }
-
   return true;
 }
