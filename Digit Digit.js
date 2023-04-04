@@ -12,11 +12,5 @@
 
 // Answer
 function squareDigits(num) {
-  const str = num.toString();
-  let result = "";
-
-  for (let i = 0; i < str.length; i++) {
-    result += str[i] ** 2;
+  return +num.toString().split('').map(el => el ** 2).join('');
   }
-  return +result;
-}
