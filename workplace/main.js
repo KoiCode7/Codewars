@@ -1,20 +1,12 @@
-function validParentheses(parenStr) {
-  let count = 0;
+function squareDigits(num) {
+  const str = num.toString();
+  let result = "";
 
-  for (let i = 0; i < parenStr.length; i++) {
-    if (parenStr[i] === "(") {
-      count++;
-    } else {
-      count--;
-    }
-    if (count < 0) {
-      return false;
-    }
+  for (let i = 0; i < str.length; i++) {
+    result += str[i] ** 2;
   }
-  if (count > 0) {
-    return false;
-  }
-  return true;
+  return +result;
 }
 
-console.log(validParentheses(")(()))" ));
+console.log(squareDigits(765));
+
