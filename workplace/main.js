@@ -1,16 +1,8 @@
 function solution(start, finish) {
-  let count = 0;
-  let shelfNum = start;
-  while (finish !== shelfNum) {
-    if (finish >= shelfNum + 3) {
-      count++;
-      shelfNum += 3;
-    } else {
-      count++;
-      shelfNum += 1;
-    }
-  }
-  return count;
+  const numToClimb = finish - start;
+  const threeStepsJump = Math.floor(numToClimb / 3);
+  const oneStepJump = numToClimb % 3;
+  return threeStepsJump + oneStepJump;
 }
 
 console.log(solution(1, 5));
