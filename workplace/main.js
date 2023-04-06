@@ -1,8 +1,8 @@
-function solution(start, finish) {
-  const numToClimb = finish - start;
-  const threeStepsJump = Math.floor(numToClimb / 3);
-  const oneStepJump = numToClimb % 3;
-  return threeStepsJump + oneStepJump;
+function moveZeros(arr) {
+  const notZero = arr.filter((el) => el !== 0);
+  const zero = arr.filter((el) => el === 0);
+
+  return notZero.concat(zero);
 }
 
-console.log(solution(1, 5));
+console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
