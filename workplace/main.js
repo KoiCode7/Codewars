@@ -1,16 +1,9 @@
 function count(string) {
   const object = {};
-  for (let i = 0; i < string.length; i++) {
-    let char = string[i];
-
-    if (object[char]) {
-      object[char]++;
-    } else {
-      object[char] = 1;
-    }
-  }
+  string.split("").forEach((el) => {
+    object[el] ? object[el]++ : (object[el] = 1);
+  });
   return object;
 }
 
-
-console.log(count('aba'));
+console.log(count("aba"));
