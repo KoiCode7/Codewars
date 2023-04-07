@@ -1,8 +1,16 @@
-function moveZeros(arr) {
-  const notZero = arr.filter((el) => el !== 0);
-  const zero = arr.filter((el) => el === 0);
+function count(string) {
+  const object = {};
+  for (let i = 0; i < string.length; i++) {
+    let char = string[i];
 
-  return notZero.concat(zero);
+    if (object[char]) {
+      object[char]++;
+    } else {
+      object[char] = 1;
+    }
+  }
+  return object;
 }
 
-console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
+
+console.log(count('aba'));
