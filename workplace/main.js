@@ -1,10 +1,16 @@
-function isItANum(str) {
-  const fixedStr = str.toLowerCase().replace(/[^0-9]/g, "");
-  if (fixedStr.length === 11 && fixedStr[0] === "0") {
-    return fixedStr;
-  } else {
-    return "Not a phone number";
-  }
+function duplicateEncode(word) {
+  const a = word.toLowerCase().split("");
+  const ob = {};
+
+  a.forEach((el) => {
+    if (ob[el]) {
+      ob[el]++;
+    } else {
+      ob[el] = 1;
+    }
+  });
+
+  return a.map((el) => (ob[el] > 1 ? ")" : "(")).join("");
 }
 
-console.log(isItANum("S:)0207ERGQREG88349F82!efRF)"));
+console.log(duplicateEncode("Success"));
