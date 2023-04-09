@@ -1,16 +1,16 @@
 function duplicateEncode(word) {
-  const a = word.toLowerCase().split("");
-  const ob = {};
+  const array = word.toLowerCase().split("");
+  const object = {};
 
-  a.forEach((el) => {
-    if (ob[el]) {
-      ob[el]++;
+  array.forEach((el) => {
+    if (object[el]) {
+      object[el]++;
     } else {
-      ob[el] = 1;
+      object[el] = 1;
     }
   });
 
-  return a.map((el) => (ob[el] > 1 ? ")" : "(")).join("");
+  return array.map((el) => (object[el] > 1 ? ")" : "(")).join("");
 }
 
 console.log(duplicateEncode("Success"));
