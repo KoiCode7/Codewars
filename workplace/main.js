@@ -1,11 +1,41 @@
-function duplicateEncode(word) {
-  const array = word.toLowerCase().split("");
+function dotCalculator(equation) {
+  const array = equation.split(" ");
 
-  return array
-    .map(function (value, index, array) {
-      return array.indexOf(value) === array.lastIndexOf(value) ? "(" : ")";
-    })
-    .join("");
+  if (array[1] === "+") {
+    const num = array[0].length + array[2].length;
+    let dot = [];
+    for (let i = 0; i < num; i++) {
+      dot.push(".");
+    }
+    return dot.join("");
+  }
+
+  if (array[1] === "-") {
+    const num = array[0].length - array[2].length;
+    let dot = [];
+    for (let i = 0; i < num; i++) {
+      dot.push(".");
+    }
+    return dot.join("");
+  }
+
+  if (array[1] === "*") {
+    const num = array[0].length * array[2].length;
+    let dot = [];
+    for (let i = 0; i < num; i++) {
+      dot.push(".");
+    }
+    return dot.join("");
+  }
+
+  if (array[1] === "//") {
+    const num = Math.floor(array[0].length / array[2].length);
+    let dot = [];
+    for (let i = 0; i < num; i++) {
+      dot.push(".");
+    }
+    return dot.join("");
+  }
 }
 
-console.log(duplicateEncode("Success"));
+console.log(dotCalculator(".. - .."));
