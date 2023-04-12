@@ -1,10 +1,10 @@
-function minSum(arr) {
-  let sum = 0;
-  arr.sort((a, b) => a - b);
-  while (arr.length) {
-    sum += arr.shift() * arr.pop();
+function maxProduct(numbers, size) {
+  const sortedArr = numbers.sort((a, b) => b - a);
+  let result = 1;
+  for (let i = 0; i < size; i++) {
+    result *= sortedArr[i];
   }
-  return sum;
+  return result;
 }
 
-console.log(minSum([12, 6, 10, 26, 3, 24]));
+console.log(maxProduct([13, 12, -27, -302, 25, 37, 133, 155, -14], 5));
