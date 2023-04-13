@@ -1,8 +1,15 @@
-function maxProduct(numbers, size) {
-  return numbers
-    .sort((a, b) => b - a)
-    .slice(0, size)
-    .reduce((acc, cu) => acc * cu, 1);
+function arrayLeaders(numbers) {
+  const newNums = [...numbers];
+  let newArray = [];
+  for (let i = 0; i < numbers.length; i++) {
+    const firstNum = newNums.shift();
+    const sum = newNums.reduce((acc, c) => acc + c, 0);
+
+    if (firstNum > sum) {
+      newArray = [...newArray, firstNum];
+    }
+  }
+  return newArray;
 }
 
-console.log(maxProduct([13, 12, -27, -302, 25, 37, 133, 155, -14], 5));
+console.log(arrayLeaders([0, -1, -29, 3, 2]));
