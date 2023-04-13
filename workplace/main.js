@@ -1,15 +1,4 @@
-function arrayLeaders(numbers) {
-  const newNums = [...numbers];
-  let newArray = [];
-  for (let i = 0; i < numbers.length; i++) {
-    const firstNum = newNums.shift();
-    const sum = newNums.reduce((acc, c) => acc + c, 0);
-
-    if (firstNum > sum) {
-      newArray = [...newArray, firstNum];
-    }
-  }
-  return newArray;
-}
+const arrayLeaders = (numbers) =>
+  numbers.filter((el, index) => el > numbers.slice(index + 1).reduce((acc, c) => acc + c, 0));
 
 console.log(arrayLeaders([0, -1, -29, 3, 2]));
