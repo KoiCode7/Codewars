@@ -34,16 +34,11 @@
 
 
 // Answer 
-function maxGap(numbers) {
-  const sortedArr = numbers.sort((a, b) => a - b);
-  let maxNum = 0;
-
-  sortedArr.forEach((el, idx, arr) => {
-    const difference = Math.abs(el - arr[idx + 1]);
-    if (difference > maxNum) {
-      maxNum = difference;
-    }
-  });
-
-  return maxNum;
-}
+const maxGap = (numbers) =>
+  Math.max(
+    ...numbers
+      .sort((a, b) => a - b)
+      .map((e, i, a) => {
+        return i > 0 ? Math.abs(e - a[i - 1]) : 0;
+      })
+  );
