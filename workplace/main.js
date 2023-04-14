@@ -1,4 +1,15 @@
-const arrayLeaders = (numbers) =>
-  numbers.filter((el, index) => el > numbers.slice(index + 1).reduce((acc, c) => acc + c, 0));
+function maxGap(numbers) {
+  const sortedArr = numbers.sort((a, b) => a - b);
+  let maxNum = 0;
 
-console.log(arrayLeaders([0, -1, -29, 3, 2]));
+  sortedArr.forEach((el, idx, arr) => {
+    const difference = Math.abs(el - arr[idx + 1]);
+    if (difference > maxNum) {
+      maxNum = difference;
+    }
+  });
+
+  return maxNum;
+}
+
+console.log(maxGap([-3, -27, -4, -2]));
