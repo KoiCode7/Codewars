@@ -1,10 +1,13 @@
-const maxGap = (numbers) =>
-  Math.max(
-    ...numbers
-      .sort((a, b) => a - b)
-      .map((e, i, a) => {
-        return i > 0 ? Math.abs(e - a[i - 1]) : 0;
-      })
-  );
+function productArray(numbers) {
+  let result = [];
 
-console.log(maxGap([-3, -27, -4, -2]));
+  for (let i = 0; i < numbers.length; i++) {
+    const newArray = [...numbers];
+    newArray.splice(i, 1);
+    result = [...result, newArray.reduce((acc, c) => acc * c, 1)];
+  }
+
+  return result;
+}
+
+console.log(productArray([3, 27, 4, 2]));
