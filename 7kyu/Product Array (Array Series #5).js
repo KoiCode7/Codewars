@@ -38,14 +38,5 @@
 
 
 // Answer 
-function productArray(numbers) {
-  let result = [];
-
-  for (let i = 0; i < numbers.length; i++) {
-    const newArray = [...numbers];
-    newArray.splice(i, 1);
-    result = [...result, newArray.reduce((acc, c) => acc * c, 1)];
-  }
-
-  return result;
-}
+const productArray = (numbers) =>
+  numbers.map((el, idx, arr) => arr.reduce((acc, cu) => acc * cu, 1) / el);
