@@ -1,4 +1,8 @@
-const productArray = (numbers) =>
-  numbers.map((el, idx, arr) => arr.reduce((acc, cu) => acc * cu, 1) / el);
+function nthSmallest(arr, pos) {
+  return +arr
+    .sort((a, b) => a - b)
+    .splice(pos - 1, 1)
+    .join("");
+}
 
-console.log(productArray([3, 27, 4, 2]));
+console.log(nthSmallest([15, 20, 7, 10, 4, 3], 3));
