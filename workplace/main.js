@@ -1,3 +1,21 @@
-const nthSmallest = (arr, pos) => arr.sort((a, b) => a - b)[pos - 1];
+function minimumSteps(numbers, value) {
+  numbers.sort((a, b) => a - b);
+  const len = numbers.length;
+  let steps = 0;
+  let sum = +numbers.splice(0, 1).join("");
 
-console.log(nthSmallest([15, 20, 7, 10, 4, 3], 3));
+  if (sum >= value) {
+    return steps;
+  }
+
+  for (let i = 0; i < len; i++) {
+    sum += +numbers.splice(0, 1).join("");
+    steps++;
+    if (sum >= value) {
+      return steps;
+    }
+  }
+  return steps;
+}
+
+console.log(minimumSteps([4, 6, 3], 2));
