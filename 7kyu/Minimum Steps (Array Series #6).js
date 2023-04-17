@@ -43,20 +43,11 @@
 // Answer 
 function minimumSteps(numbers, value) {
   numbers.sort((a, b) => a - b);
-  const len = numbers.length;
-  let steps = 0;
-  let sum = +numbers.splice(0, 1).join("");
-
-  if (sum >= value) {
-    return steps;
-  }
-
-  for (let i = 0; i < len; i++) {
-    sum += +numbers.splice(0, 1).join("");
-    steps++;
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
     if (sum >= value) {
-      return steps;
+      return i;
     }
   }
-  return steps;
 }
