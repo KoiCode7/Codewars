@@ -1,21 +1,12 @@
 function minimumSteps(numbers, value) {
   numbers.sort((a, b) => a - b);
-  const len = numbers.length;
-  let steps = 0;
-  let sum = +numbers.splice(0, 1).join("");
-
-  if (sum >= value) {
-    return steps;
-  }
-
-  for (let i = 0; i < len; i++) {
-    sum += +numbers.splice(0, 1).join("");
-    steps++;
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
     if (sum >= value) {
-      return steps;
+      return i;
     }
   }
-  return steps;
 }
 
-console.log(minimumSteps([4, 6, 3], 2));
+console.log(minimumSteps([19, 98, 69, 28, 75, 45, 17, 98, 67], 464));
