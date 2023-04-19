@@ -1,7 +1,8 @@
-function maxTriSum(numbers) {
-  const arr = numbers.sort((a, b) => b - a).filter((el, idx, arr) => el !== arr[idx - 1]);
-
-  return arr[0] + arr[1] + arr[2];
+function rowWeights(array) {
+  console.log(array);
+  const t1 = array.filter((el, idx) => idx % 2 === 0).reduce((acc, c) => acc + c, 0);
+  const t2 = array.filter((el, idx) => idx % 2 !== 0).reduce((acc, c) => acc + c, 0);
+  return [t1, t2];
 }
 
-console.log(maxTriSum([-7, 12, -7, 29, -5, 0, -7, 0, 0, 29]));
+console.log(rowWeights([50, 60, 70, 80]));
