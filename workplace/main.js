@@ -1,7 +1,10 @@
 function rowWeights(array) {
-  const t1 = array.filter((el, idx) => idx % 2 === 0).reduce((acc, c) => acc + c, 0);
-  const t2 = array.filter((el, idx) => idx % 2 !== 0).reduce((acc, c) => acc + c, 0);
-  return [t1, t2];
+  let result = [0, 0];
+
+  for (let i = 0; i < array.length; i++) {
+    result[i % 2] += array[i];
+  }
+  return result;
 }
 
 console.log(rowWeights([50, 60, 70, 80]));
