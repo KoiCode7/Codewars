@@ -1,8 +1,7 @@
-function minValue(values){
-  console.log(values.sort((a, b) => a -b).filter((el, idx, arr) => el !== arr[idx - 1]).join(''))
+const minValue = (values) =>
+  +Array.from(new Set(values))
+    .sort((a, b) => a - b)
+    .join("");
 
-  return +values.sort((a, b) => a -b).filter((el, idx, arr) => el !== arr[idx - 1]).join('');
-}
-
-
-console.log(minValue([4, 7, 5, 7]))
+    
+console.log(minValue([4, 7, 5, 7]));
