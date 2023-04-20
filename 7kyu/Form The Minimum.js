@@ -20,6 +20,7 @@
 
 
 // Answer 
-function minValue(values){
-  return +values.sort((a, b) => a -b).filter((el, idx, arr) => el !== arr[idx - 1]).join('');
-}
+const minValue = (values) =>
+  +Array.from(new Set(values))
+    .sort((a, b) => a - b)
+    .join("");
