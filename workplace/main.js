@@ -1,10 +1,8 @@
-function rowWeights(array) {
-  let result = [0, 0];
+function minValue(values){
+  console.log(values.sort((a, b) => a -b).filter((el, idx, arr) => el !== arr[idx - 1]).join(''))
 
-  for (let i = 0; i < array.length; i++) {
-    result[i % 2] += array[i];
-  }
-  return result;
+  return +values.sort((a, b) => a -b).filter((el, idx, arr) => el !== arr[idx - 1]).join('');
 }
 
-console.log(rowWeights([50, 60, 70, 80]));
+
+console.log(minValue([4, 7, 5, 7]))
