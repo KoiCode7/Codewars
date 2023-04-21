@@ -1,7 +1,5 @@
-const minValue = (values) =>
-  +Array.from(new Set(values))
-    .sort((a, b) => a - b)
-    .join("");
+function adjacentElementsProduct(array) {
+  return Math.max(...array.map((el, idx, arr) => el * arr[idx + 1]).filter(el => !isNaN(el)));
+}
 
-    
-console.log(minValue([4, 7, 5, 7]));
+console.log(adjacentElementsProduct([1, 2, 3]));
